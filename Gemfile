@@ -54,10 +54,7 @@ gem "autoprefixer-rails"
 
 
 
-group :production do
-  gem 'pg'
-  gem 'via'
-end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
