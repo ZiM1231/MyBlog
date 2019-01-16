@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+  <div class="container-2">
+    <div class="text">
+      <h2>MyBlog</h2>
+    </div>
+    <div class="lock">
+    <%=link_to image_tag("logos/lock.png", width: '250px') %>
+    </div>
+
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email, class: "text" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"sign_in" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, class: "text" %><br />
+      <%= f.password_field :password, autocomplete: "current-password", class:"sign_in" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me, class:"remember_me" %>
+        <%= f.label :remember_me, class: "text" %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Log in",  class:"Log_in" %>
+
+    </div>
+  <% end %>
+  </div>
+
+</body>
+</html>

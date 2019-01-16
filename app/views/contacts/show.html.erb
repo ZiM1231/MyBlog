@@ -1,0 +1,22 @@
+<article class="contact">
+  <section class="contact-head">
+    <h1><%= @contact.title %></h1>
+    <small>
+      <% if user_signed_in? && current_user.admin? %>
+
+        <%= link_to 'Изменить', edit_admin_contact_path(@contact) %>
+        |
+        <%= link_to 'Удалить', admin_contact_path(@contact), method: :delete, data: { confirm: 'Вы уверены?' } %>
+      <% end %>
+    </small>
+  </section>
+
+  <section class="contact-body">
+    <%= image_tag @contact.image.url(:large), class: 'img-show' if @contact.image? %>
+    <%= @contact.body.html_safe %>
+
+  </section>
+
+
+
+</article>

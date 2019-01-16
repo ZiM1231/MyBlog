@@ -1,0 +1,41 @@
+ua:
+  common:
+    errors: 'При заповненні форми виникли помилки'
+    back: 'Назад'
+    create: 'Створити'
+    edit: 'Змінити'
+  will_paginate:
+    previous_label: '&larr; Туда'
+    next_label: 'Сюда &rarr;'
+
+  admin:
+    posts:
+      new:
+        title: 'Нова статя'
+      edit:
+        title: 'Редагування статі'
+      form:
+        submit:
+          '%{action} статю'
+
+    categories:
+      index:
+        title: 'Категорії'
+      new:
+        title: 'Нова категорія'
+      edit:
+        title: 'Редагування категорій'
+      form:
+        submit:
+          '%{action} категорію'
+
+
+    caps:
+      new:
+        title: 'Новий опис'
+      edit:
+        title: 'Редагування опису'
+      form:
+    
+        submit:
+          '%{action} опис'

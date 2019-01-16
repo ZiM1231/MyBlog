@@ -1,0 +1,16 @@
+<article class="cap">
+  <section class="cap-head">
+    <small>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'Змінити', edit_admin_cap_path(@cap), class: 'btn btn-outline-primary btn-sm' %>
+        <%= link_to 'Видалити', admin_cap_path(@cap), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-outline-primary btn-sm' %>
+      <% end %>
+    </small>
+  </section>
+
+  <section class= "cap-body " >
+    <%= image_tag @cap.image.url(:small), class: 'img-show ' if @cap.image? %>
+    <%= @cap.body.html_safe %>
+  </section>
+
+</article>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin panel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    ​<div class="container-1">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="col-md-2">
+                <li class="avatar">
+                <%=link_to image_tag("logos/logo.png", width: '120px'), root_path %>
+                </li>
+              </div>
+            <div class="navigation">
+              <ul class="nav justify-content-end">
+
+              <li class="nav-item">
+                <a class="nav-link active" href="<%= root_path %>">Головна</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= caps_path %>">Про мене</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="<%= contacts_path %>">Контакти</a>
+              </li>
+
+
+
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <li class="nav-item">
+                    <%= link_to "Admin", new_admin_panel_path, class: "nav-link"%>
+                  </li>
+                <li class="nav-item">
+                  <%= link_to "Вихід", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+                  <% else %>
+                <li class="nav-item">
+                  <%= link_to "Admin", new_user_session_path, class: "nav-link" %>
+                </li>
+                  <% end %>
+                </ul>
+              </div>
+            </nav>
+
+
+
+  <div class="row">
+    <div class="col-md-2">
+      <div class="text-1">
+          <h5> Тут буде шось коротко написано про мій блог</h5>
+        </div>
+      <div class="shared">
+          <%= render 'shared/submenu' %>
+        </div>
+      <div class="tag_cloud">
+        <h2>Теги</h2>
+        <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
+    </div>
+
+      <div class="col-md-10">
+          <%= yield %>
+      </div>
+      </div>
+          <footer>
+            <p>MyBlog, 2019</p>
+          </footer>
+  </div>
+
+  </body>
+</html>

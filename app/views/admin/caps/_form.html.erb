@@ -1,0 +1,17 @@
+<%= form_for [:admin, @cap], html: { multipart: true } do |f| %>
+
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.trix_editor :body, class: 'editor' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Змінити', action: @cap.new_record? ? t('common.create') : t('common.edit'), class: 'btn btn-primary' %>
+    <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>

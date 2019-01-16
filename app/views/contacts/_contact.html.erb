@@ -1,0 +1,23 @@
+<article class="contact">
+  <section class="contact-head">
+
+  <small>
+
+      <% if user_signed_in? && current_user.admin? %>
+
+        <%= link_to 'Змінити', edit_admin_contact_path(contact) %>
+        |
+        <%= link_to 'Видалити', admin_contact_path(contact), method: :delete, data: { confirm: 'Ви впевнені?' } %>
+      <% end %>
+    </small>
+  </section>
+
+
+
+  <section class="contact-body clearfix">
+    <%= image_tag contact.image.url(:large), class: 'img-thumbnail thumb' if contact.image? %>
+    <%= contact.body.html_safe %>
+
+
+  </section>
+</article>
