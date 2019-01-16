@@ -56,6 +56,7 @@ gem "autoprefixer-rails"
 
 group :production do
   gem 'pg'
+  gem 'via'
 end
 
 group :development, :test do
