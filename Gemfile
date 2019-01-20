@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.3'
 gem 'carrierwave', '~> 1.0'
-
+gem 'sqlite3'
 gem  'trix-rails', require: 'trix'
 
 gem 'will_paginate', '~> 3.1.0'
@@ -69,7 +69,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "letter_opener"
-  gem 'sqlite3'
+
 end
 
 group :test do
