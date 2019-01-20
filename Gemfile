@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.3'
 gem 'carrierwave', '~> 1.0'
-gem 'sqlite3'
+
 gem  'trix-rails', require: 'trix'
 
 gem 'will_paginate', '~> 3.1.0'
@@ -54,7 +54,9 @@ gem "autoprefixer-rails"
 
 
 
-
+group :production do
+  gem "pg"
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
