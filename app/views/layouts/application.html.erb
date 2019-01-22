@@ -4,10 +4,15 @@
     <title>MyBlog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <style>
+      body
+       {
+         font-family: 'Comfortaa', cursive;
+        }
+    </style>
   </head>
 
   <body>
@@ -58,7 +63,7 @@
   <div class="row">
     <div class="col-md-2">
       <div class="text-1">
-          <h5> Тут щось буде напимано</h5>
+          <h5> Тут щось буде напиcано</h5>
         </div>
       <div class="shared">
           <%= render 'shared/submenu' %>
